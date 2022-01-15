@@ -1,6 +1,6 @@
 module.exports = function toReadable(number) {
     let ones = [
-        'zero',
+        '',
         'one',
         'two',
         'three',
@@ -12,6 +12,7 @@ module.exports = function toReadable(number) {
         'nine',
     ];
     let teen = [
+        '',
         '',
         'ten',
         'eleven',
@@ -25,8 +26,9 @@ module.exports = function toReadable(number) {
         'nineteen'
     ];
     let tens = [
-        "",
-        "",
+        '',
+        '',
+        '',
         'twenty',
         'thirty',
         'forty',
@@ -41,7 +43,11 @@ module.exports = function toReadable(number) {
     let result;
 
     if (string.length === 1) {
-        result = ones[number];
+        if (number === 0) {
+            result = 'zero';
+        } else {
+            result = ones[number];
+        }
     }
     if (string.length === 2) {
         if (number < 10) {
