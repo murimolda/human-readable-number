@@ -13,7 +13,6 @@ module.exports = function toReadable(number) {
     ];
     let teen = [
         '',
-        '',
         'ten',
         'eleven',
         'twelve',
