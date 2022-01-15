@@ -48,11 +48,14 @@ module.exports = function toReadable(number) {
             result = ones[number];
         }
     }
+
     if (string.length === 2) {
         if (number < 10) {
             result = ones[number];
         } else if (number >= 10 && number < 20) {
             result = teen[+string[0] + +string[1]];
+        } else if (number >= 20 && number % 10 == 0) {
+            result = tens[string[0]];
         } else {
             result = tens[string[0]] + ' ' + ones[string[1]];
         }
@@ -65,6 +68,8 @@ module.exports = function toReadable(number) {
             result = ones[string[0]] + ' hundred ' + ones[string[2]];
         } else if (+string[string.length - 2] === 1) {
             result = ones[string[0]] + ' hundred ' + teen[+string[1] + +string[2]];
+        } else if (+string[string.length - 1] === 0) {
+            result = ones[string[0]] + ' hundred ' + tens[string[1]];
         } else {
             result = ones[string[0]] + ' hundred ' + tens[string[1]] + ' ' + ones[string[2]];
         }
