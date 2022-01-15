@@ -28,7 +28,6 @@ module.exports = function toReadable(number) {
     let tens = [
         '',
         '',
-        '',
         'twenty',
         'thirty',
         'forty',
